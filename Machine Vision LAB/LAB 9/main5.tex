@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Bonus Question for Lab 9:  \\ Building an AND Gate Using a Perceptron}
+\author{Mohammad Parsa Dini \\ Student ID: 400101204}
+\date{}
+\maketitle
+
+
+\section*{Introduction}
+A perceptron is a simple neural network model that can be used to implement logical gates such as the AND gate. In this document, we will build an AND gate using a perceptron and visualize it with some test cases using Python.
+
+\section*{Perceptron Model}
+The perceptron model for an AND gate is defined with the following parameters:
+- Inputs: \(x_1\) and \(x_2\)
+- Weights: \(w_1 = 1\), \(w_2 = 1\)
+- Bias: \(b = -1.5\)
+
+The output of the perceptron is given by:
+
+
+\[
+\text{output} = 
+\begin{cases} 
+1 & \text{if} \, (w_1 \cdot x_1 + w_2 \cdot x_2 + b) \geq 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+
+
+\section*{Python Code for Visualization}
+The following Python code implements the perceptron model for the AND gate and visualizes the results for all possible input combinations.
+
+\begin{lstlisting}[language=Python, caption=Perceptron Implementation for AND Gate]
+import numpy as np
+import matplotlib.pyplot as plt
+
+def perceptron(x1, x2, w1=1, w2=1, b=-1.5):
+    weighted_sum = w1 * x1 + w2 * x2 + b
+    return 1 if weighted_sum >= 0 else 0
+
+# Test the perceptron with all input combinations for an AND gate
+inputs = [(0, 0), (0, 1), (1, 0), (1, 1)]
+outputs = [perceptron(x1, x2) for x1, x2 in inputs]
+
+# Print the results
+for inp, out in zip(inputs, outputs):
+    print(f"Input: {inp} -> Output: {out}")
+
+# Visualize the perceptron decision boundary
+plt.figure()
+for x1, x2 in inputs:
+    plt.scatter(x1, x2, color='blue' if perceptron(x1, x2) else 'red')
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.title('AND Gate with Perceptron')
+plt.grid(True)
+plt.show()
+\end{lstlisting}
+
+\section*{Results}
+The perceptron correctly implements the AND gate, as shown by the following output:
+\begin{verbatim}
+Input: (0, 0) -> Output: 0
+Input: (0, 1) -> Output: 0
+Input: (1, 0) -> Output: 0
+Input: (1, 1) -> Output: 1
+\end{verbatim}
+
+The decision boundary and visualization are displayed in the plot, where blue points represent output 1 and red points represent output 0.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Figure_2.png} % Adjust the width as needed
+    \caption{The output of the model for AND gate and the decision boundary.}
+    \label{fig:figure1}
+\end{figure}
+
+\end{document}
