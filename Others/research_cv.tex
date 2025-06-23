@@ -1,0 +1,432 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\usepackage{blindtext}
+\usepackage{multicol}
+\title{Multicols Demo}
+%\input{glyphtounicode}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+	\vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+%\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+	\item\small{
+		{#1 \vspace{-2pt}}
+	}
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\textit{\small#1} & \textit{\small #2} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+		\textit{\small#5} & \textit{\small #6} \\
+	\end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\small#1 & #2 \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textit{\small #2} \\
+		\textit{\small#3}
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------
+\begin{document}
+	\begin{center}
+		\textbf{\Huge \scshape Mohammad Parsa Dini} \\ \vspace{3pt}
+		\small
+		\faMobile \hspace{.5pt} \href{tel:989175955982}{+98 992 387 7137}
+		$|$
+		\faAt \hspace{.5pt} \href{mailto:alireza.agm@gmail.com}{mohammadparsadinithefirst@gmail.com}
+		$|$
+		\faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/mohammad-parsa-dini}{LinkedIn}
+		$|$
+		\faGithub \hspace{.5pt} \href{https://github.com/MohammadParsaTheFirst}{GitHub}
+		$|$
+		\faMapMarker \hspace{.5pt} \href{https://www.google.com/maps/place/Sharif+University+of+Technology/@35.7036491,51.3495146,17z/data=!3m1!4b1!4m5!3m4!1s0x3f8e00a8bc1a7e63:0x61a5a909b878501!8m2!3d35.7036491!4d51.3517033}{Tehran, Iran}
+	\end{center}
+%-------------------------------------------------------	
+	%----------- EDUCATION -----------
+%-------------------------------------------------------	
+	\section{Education}
+	\vspace{3pt}
+	\resumeSubHeadingListStart
+	
+	\resumeEducationHeading
+	{Sharif University of Technology
+		% \normalfont{(Admission rate: 0.09\%)}
+	}{Tehran, Iran}
+	{B.Sc. in Electrical and Electronics Engineering;   \textbf{GPA: 3.68/4 (equivalently : 
+        89.60/100)}}{}
+	{Specialization in Communication Systems Engineering;}{Sep 2021 \textbf{--} present}
+	  
+	\resumeSubheading
+	{National Organization for Development of Exceptional Talents (Sampad)
+		% \normalfont{(Admission rate: 0.85\%)}
+	}{Hamedan, Iran}
+	{High School Diploma;   \textbf{GPA: 4.00/4(equivalently: 19.12/20) }}{Sep 2018 \textbf{--} Jun 2021}
+	
+	\resumeSubHeadingListEnd
+%--------------------------------------------------------------	
+        %----------- RESEARCH EXPERIENCE -----------
+%--------------------------------------------------------------	
+        \section{Research Experience}
+        \vspace{2pt}
+        \resumeSubHeadingListStart
+        \small{ \item{
+
+        \textbf{Unlearning Generative Models:} 
+        \textit{Currently working under the supervision of} 
+        \href{https://scholar.google.com/citations?user=24GngZYAAAAJ&hl=en}{\textbf{Dr. Sajjad Amini}} 
+        \textit{and} 
+        \href{https://scholar.google.com/citations?user=SqASevMAAAAJ&hl=en}{\textbf{Dr. Mojahedian}}. 
+        In many scenarios, machine unlearning is crucial, particularly for Large Language Models (LLMs) and Generative Models, where retraining a model comes with a significant computational cost. 
+        Our focus is on evaluating unlearning techniques for generative models trained for repainting tasks, such as diffusion networks. Specifically, we aim to ensure that a genuinely unlearned model produces results that are completely independent of the unlearned concept when a masked input image is provided.
+        } \\
+        \vspace{4pt}
+        \item{
+            \textbf{Deblurring in Image Processing:}
+            \textit{Working on developing a novel deblurring technique under the supervision of} 
+            %\href{https://scholar.google.com/citations?user=24GngZYAAAAJ&hl=en}{\textbf{Dr. Arash Amini}}. 
+            Dr. Amini.
+            This project combines denoising networks with the traditional plug-and-play framework for effective image deblurring. Our approach leverages innovative methodologies to improve the accuracy and efficiency of restoring blurred images.
+            }
+        }
+        \resumeSubHeadingListEnd
+
+%--------------------------------------------------------------	
+        %----------- SELECTED COURSES -----------
+%--------------------------------------------------------------	
+        \section{Selected Courses}
+        \vspace{2pt}
+        \resumeSubHeadingListStart
+        \begin{multicols}{2}
+        \begin{itemize}[label=$\bullet$]
+            \item Deep Generative Models
+            \item High Dimensional Probabilities
+            \item Information theory statistics learning
+            \item Digital Signal Processing
+            \item Cryptography and Network Security
+            \item Linear Algebra
+            \item Machine Vision
+            \item Graph Signal Processing
+            \item Intro. to Machine Learning
+            \item Signal and Systems
+            \item Convex Optimization
+            \item Probability and Statistics
+            \item Engineering Mathematics
+            \item Communication Systems
+        \end{itemize}
+        \end{multicols}
+
+        \resumeSubHeadingListEnd
+%--------------------------------------------------------------	
+    %----------- Work EXPERIENCE -----------
+%--------------------------------------------------------------		
+	\section{Work Experience}
+	\vspace{3pt}
+	\resumeSubHeadingListStart
+	\small{\item{
+
+            \textbf{Internship at Parman(Parto Tamas Novin) Company:}{Contributed to a project(worked on a team) developing test cases for network protocols on a Layer-2 Switch, ensuring robust and efficient performance. Furthermore, trying to find vulnerabilities by considering different scenarios.}
+
+            \begin{itemize}
+                \item Technical Skills: Layer2 switch, Linux, TRex, Scapy
+                \item Soft Skills: Teamwork, Time management, Presentation skills, Scrum-Master Structure, ...
+                \item Tehran, Iran - Jun 2024 \textbf{--} Aug 2024
+            \end{itemize}
+            
+		\textbf{Internship at {\href{https://www.mapnamd2.com/en/}{Mapna-md2}}: }{
+            Collaborated on a project at Mapna-md2, where our team developed a real-time Computer Vision model to detect workers on construction sites. Additionally, I explored methods to enhance the efficiency of processing multiple camera feeds simultaneously using YOLO algorithms. My role also involved training models to identify hazardous areas in the workplace, ensuring a safer environment for all personnel.}
+            \begin{itemize}
+                \item Technical Skills: Python(Tensorflow, Pytorch), Yolo, ...
+                \item Soft Skills: Teamwork, Time management, Presentation skills, ...
+                \item Tehran, Iran - Jun 2023 \textbf{--} Aug 2023
+            \end{itemize}
+
+            %\textbf{Research intern at Information Theory Lab :} I am currently working on Information Theory in Federated Learning under supervision of \textit{Prof. M. H. Yassaee} and under mentorship of \textit{Dr. M.Reza Rahmani}.
+
+
+            
+            %\textbf{Statistical Learnin: }{Variational Inference, Probabilistic Graphical Models}
+
+            %\textbf{Linear Programming:} Constrained convex optimization, Convex optimization
+	}}
+	\resumeSubHeadingListEnd
+	%\resumeItemListEnd
+	%\resumeSubHeadingListEnd
+%-----------------------------------------------------------------	
+	%----------- AWARDS & ACHIEVEMENTS -----------
+%-----------------------------------------------------------------	
+    \section{Awards \& Achievements}
+    \vspace{2pt}
+    \resumeSubHeadingListStart
+    \small{
+        \item{
+            \resumeItemListStart
+                \resumeItem{Ranked \emph{66} (in the top 0.1\%) among 150,000 students taking part in Iran National University Entrance Exam (concour) in Mathematics/Physics Branch, 2021.} \\ \vspace{3pt}
+
+                \resumeItem{Winning silver medal place at Hamedan district chess competition. Also winning the $3^{rd}$ place as Teams.\\ \vspace{3pt}
+	    \resumeItemListEnd
+	}
+    }
+    \resumeSubHeadingListEnd	
+%-------------------------------------------------------------		
+	%----------- RESEARCH INTERESTS -----------
+%-------------------------------------------------------------	
+
+	\section{Research Interests}
+	\vspace{2pt}
+	\resumeSubHeadingListStart
+	\small{\item{
+
+		\textbf{Machine Learning and Data Science: }{\\ Deep Generative 
+                Models, Reinforcement Learning, Deep Learning}
+
+            \textbf{Graph Signal Processing:}{ \\GSP in NLP, Graphical Analysis of   a data}
+
+            \textbf{Information theory: }{\\Hyper-contractivity, Contexts of Adversarial Attacks and Information Theoretic bounds, Machine Learning }
+            
+            %\textbf{Statistical Learnin: }{Variational Inference, Probabilistic Graphical Models}
+	}}
+	\resumeSubHeadingListEnd
+
+
+%-------------------------------------------------------------		
+	%----------- SKILLS -----------
+%-------------------------------------------------------------		
+	\section{Skills}
+	\vspace{2pt}
+	\resumeSubHeadingListStart
+	\small{\item{
+			\textbf{Programming Languages:}{Python, C/C++, Java, Matlab, Latex , Verilog , Assembly} \\ \vspace{3pt}
+                \textbf{Developer Tools:}{Git, Windows, SQL, Linux}
+		\\ \vspace{3pt}
+			\textbf{Frameworks:}{ PyTorch, Tensorflow, Django} 
+            \\ \vspace{3pt}
+            \textbf{Libraries:}{Scikit-Image, Scipy, Numpy, Pandas, Matplotlib, PyQt5, openCV, Tensorflow}
+            \\ \vspace{3pt}
+            \textbf{Languages:}{  Persian(Native), Turkish(Native), English(Full proficiency), French(A2), German(A2)}}}
+	\resumeSubHeadingListEnd
+%-------------------------------------------------------------		
+	%----------- PROJECTS -----------
+%-------------------------------------------------------------		
+	\section{Relevant Projects \hspace{20pt} \faGithub \hspace{.5pt} \href{https://github.com/MohammadParsaTheFirst}{GitHub}} 
+	\vspace{3pt}
+\resumeSubHeadingListStart    
+
+\resumeSubheading
+    {Machine Unlearning}{}    
+    {As the project of Intro. to Machine Learning course}{}   
+    \resumeItemListStart
+        \resumeItem{
+            Developed a model using the CIFAR-10 dataset and the ResNet18 architecture, focusing on improving accuracy across various scenarios. Additionally, worked on model unlearning techniques and tested its robustness against BackDoor attacks, ensuring high performance and resilience.
+        }    
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Universal Asynchronous Receiver Transmitter}{Spring 2023}    
+    {As a project of Computer Architecture course}{}   
+    \resumeItemListStart
+        \resumeItem{Creating a module that implements a UART which sends and receives bytes of data.\\ Tools/Techs used: Verilog, ISE}    
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Heartbeat counter}{Fall 2022}    
+    {As a project of Logical Circuits course}{}   
+    \resumeItemListStart
+        \resumeItem{Creating a module that takes the heartbeat pulse as an input and gives its BPM in real time.\\ Tools/Techs used: Verilog, ISE}    
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Twitter}{Spring 2022}    
+    {As a project of OOP course}{}   
+    \resumeItemListStart
+        \resumeItem{Creating a social media platform using Java, resembling Twitter features.\\ Tools/Techs used: Java, SQL, JavaFX}    
+    \resumeItemListEnd
+
+\resumeSubheading
+    {2D soccer game}{Fall 2021}    
+    {As a project of Basic Programming course}{}   
+    \resumeItemListStart
+        \resumeItem{Creating a module that takes the heartbeat pulse as an input and gives its BPM in real time.\\ Tools/Techs used: SDL2, C++, Photoshop}    
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Music sheet composer}{Spring 2023}    
+    {As a project of Signal and Systems course}{}   
+    \resumeItemListStart
+        \resumeItem{Developing a code using template matching that takes the sheet of music notes and composes the music.}    
+    \resumeItemListEnd
+    
+\resumeSubHeadingListEnd
+%--------------------------------------------------------------	
+	%----------- Teaching EXPERIENCE -----------
+%--------------------------------------------------------------	
+    \section{Teaching Experiences}
+    \vspace{3pt}
+    \resumeSubHeadingListStart
+	
+    \resumeItem{\textbf{Foundation of Blockchain};}{(Graduate Course);}{\footnotesize{Instructor : \href{https://scholar.google.com/citations?user=CFIJZwoAAAAJ&hl=en}{\textit{Prof. M. A. Maddahali}}}}
+
+    \resumeItem{\textbf{Signals And Systems};}
+    {(Undergraduate Course);}{\footnotesize{Instructor
+    {\href{https://scholar.google.com/citations?user=8HsoXAUAAAAJ}{\textit{Prof. B. Khalaj}}}}
+
+    \resumeItem{\textbf{Signals And Systems};}
+    {(Undergraduate Course);}{\footnotesize{Instructor
+    {\href{https://scholar.google.com/citations?user=bLuKrjgAAAAJ&hl=en}{\textit{Prof. H. Aghajan}}}}
+    
+    \resumeItem{\textbf{Probability and Statistics};}{(Undergraduate Course);}{\footnotesize{Instructor : \href{https://scholar.google.com/citations?user=Y6vuiBUAAAAJ&hl=en}{\textit{Prof. M. H. Yassaee}}}}
+
+    \resumeItem{\textbf{Engineering Mathematics};}{(Undergraduate Course);}{\footnotesize{Instructor : \href{https://scholar.google.com/citations?user=bLuKrjgAAAAJ&hl=en}{\textit{Prof. H. Aghajan}}}}
+
+    \resumeItem{\textbf{Probability and Statistics};}{(Undergraduate Course);}{\footnotesize{Instructor : \href{https://scholar.google.com/citations?user=JQs9TcgAAAAJ&hl=en}{\textit{Prof. M. Karbasi}}}}
+
+    \resumeItem{\textbf{Linear Algebra};}{(Undergraduate Course);}{\footnotesize{Instructor : \textit{Prof. Kazemi}}}    
+ 
+    \resumeItemListEnd
+% -------------------------------------------------------------------
+
+\end{document}
+
+%-------------------------------------------------------------		
+	%----------- RELEVANT COURSEWORK -----------
+%-------------------------------------------------------------		
+%   \section{All Courses}
+%   \vspace{2pt}
+%   \resumeSubHeadingListStart
+%	\small{\item{
+%           \textbf{Undergraduate Courses: }{Fundamentals of Cryptography \& Network Security, Introduction to Machine Learning, Convex Optimization, Signals and Systems, Communication Systems, Digital Signal Processing , Linear Algebra, Probability and statistics, Object Oriented Programming, Basic Programming, Computer Structures and microprocessors} \\ \vspace{3pt} 
+%
+%           \textbf{Audited Courses:}{ Introduction to Machine Learning( Coursera - Duke University), Convolutional Neural Network (Coursera - DeepLearning.AI) , Shai Ben David Course of Machine Learning Theory}
+%			
+%			
+%		\textbf{Graduate Courses: }{Information Theory \& Statistical Learning (Special Problems in Communication Systems)}	
+%        }
+%        }
+%    \resumeSubHeadingListEnd
+%-------------------------------------------------------	
+	%----------- EDUCATION -----------
+%-------------------------------------------------------	
+%        \section{Relevant Courses}
+%        \vspace{3pt}
+%        \resumeSubHeadingListStart
+%
+%        \resumeSubheading{Fundamentals of Cryptography \& Network Security}{present}{NA}{Grade: NA}
+%
+%        \resumeSubheading{Introduction to Machine Learning}{present}{NA}{Grade: NA}
+%
+%        \resumeSubheading{Information Theory \& Statistical Learning (Graduate)}{present}{NA}{Grade: NA}
+%
+%        \resumeSubheading{Convex Optimization}{present}{NA}{Grade: NA}
+%
+%        \resumeSubheading{Communication Systems}{Fall 2023}{ranked top 30\%}{Grade: 82.5/100}
+%
+%        \resumeSubheading{Digital Signal Processing}{present}{NA}{Grade: NA}
+%
+%        \resumeSubheading{Signals and Systems}{Spring 2023}{Top 5\%, ranked $2^{nd}$ in the class}{Grade: 95/100}
+%
+%        \resumeSubheading{Engineering Probability and Statistics}{Fall 2022}{Top Student}{Grade: 100/100}
+%
+%        \resumeSubheading{Engineering Mathematics}{Fall 2022}{Top Student}{Grade: 100/100}
+%        
+%        \resumeSubheading{Linear Algebra}{Spring 2023}{Top Student}{Grade: 100/100}{}{}
+%
+%        \resumeSubheading{Basic Programming}{Spring 2022}{Top 25\% of the class}{Grade: 95/100}
+%
+%        \resumeSubheading{Differential Equations}{Fall 2022}{Top Student}{Grade: 100/100}
+%        
+%        \resumeSubHeadingListEnd 
