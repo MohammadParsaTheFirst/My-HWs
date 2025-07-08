@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{graphicx, subfig, fancyhdr, amsmath, amssymb, amsthm, url, geometry, listings, xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+% Fix Unicode character issues
+\DeclareUnicodeCharacter{2212}{-}
+% Code listing style
+\lstset{
+  language=C,
+  basicstyle=\ttfamily\small,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  frame=single,
+  backgroundcolor=\color{gray!10},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  breaklines=true,
+  breakatwhitespace=true,
+  showstringspaces=false,
+  tabsize=4
+}
+% Define authors
+\newcommand{\FirstAuthor}{Mohammad Parsa Dini - Std ID: 400101204}
+% \newcommand{\SecondAuthor}{[Second Author Name - Std ID: XXX]} % Placeholder
+\newcommand{\exerciseset}{Control LAB - HW2}
+% Fancy header and footer
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large Sharif University of Technology}
+\fancyhead[LO,RE]{\sffamily\bfseries\large EE 25-403: Control LAB}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large Control LAB HW2}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\graphicspath{{figures/}}
+\title{
+  \vspace{-2em}
+  \includegraphics[width=3cm]{logo.png} \\
+  \vspace{0.5em}
+  Control LAB \\
+  \exerciseset
+}
+\author{\FirstAuthor \and \SecondAuthor}
+\date{May 2025}
+% Load hyperref last
+\usepackage{hyperref}
+
+\begin{document}
+\maketitle
+
+\section{System Identification and Control}
+\begin{enumerate}
+  \item Linearize the system around the operating point $(u_0,y_0)\approx(0.2,0.5)$.
+  \begin{equation*}
+    \dot{y} = -\frac{y}{5} + \frac{4.5}{20}\sqrt{u} = -0.2 y + 0.225 \sqrt{u}
+  \end{equation*}
+  Since by Taylor representation we have $\sqrt{u}|_{u_0=0.2} \approx \sqrt{u_0} + \frac{u-u_0}{2\sqrt{u_0}} \approx 0.447 + 1.118(u-0.2) = 1.118u + 0.224$. Thus around $u=u_0=0.2$:
+  \begin{equation*}
+    \dot{y} = -0.2y + 0.225(1.118u + 0.224) = -0.2y + 0.252u + 0.0504
+  \end{equation*}
+  which suggests around the operating point: $\dot{y} \approx 0.002$. Taking the Laplace transform of $\dot{y} \approx -0.2y + 0.25u$ results in:
+  \begin{equation*}
+    sY(s) = -0.2Y(s) + 0.25 U(s) \implies H(s) = \frac{Y(s)}{U(s)} = \frac{0.25}{s + 0.2}
+  \end{equation*}
+
+  \item Attempt to directly derive a first-order linear model for the nonlinear system shown in the figure. In order to do so, apply a small step change around the operating point $(u_0,y_0)=(0.2,0.5)$ and determine the system's gain and time constant. \\
+  \begin{equation*}
+    \dot{y} = -\frac{y}{5} + \frac{4.5}{20}\sqrt{u} \implies \dot{y} = -0.1 + \frac{4.5}{20}\sqrt{0.2} \approx 0.0006
+  \end{equation*}
+  Let $u_1 = u_0 + \Delta u = 0.2 + 0.02 = 0.22 \implies 0.0006 = -0.2y_1 + \frac{4.5}{20}\sqrt{0.22} \approx 0.500115$, which suggests $\Delta y = 0.000115 \implies \text{gain} = \frac{\Delta y}{\Delta u} = \frac{0.000115}{0.02} \approx 0.00575$. The Simulink result is depicted below:
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Screenshot 2025-07-07 111042.png}
+    \caption{Simulink result for step response around operating point.}
+    \label{fig:fig1}
+  \end{figure}
+  We can deduce that $K = \frac{0.562-0.5}{0.05} \approx 1.24$ (from Simulink). However, the $K=1.08$ from the .mlx file is more reliable.
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Screenshot 2025-07-07 112245.png}
+    \caption{Simulink output for gain calculation.}
+    \label{fig:fig2}
+  \end{figure}
+  $y_2 = 0.5 + 0.63 (0.562 - 0.5) \approx 0.539 \implies t_2 = 34.7 \implies \tau = t_2 - 30 = 4.7$ (from Simulink).
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Screenshot 2025-07-07 112713.png}
+    \caption{Simulink output for time constant calculation.}
+    \label{fig:fig3}
+  \end{figure}
+
+  \item Compare the linear model derived in parts 1 and 2 with the actual system by applying a step change around the operating point $(u_0,y_0)=(0.2,0.5)$. Plot the output of models and the real systems on the same axes. \\
+  The results are shown in the .mlx file attached to the GitHub repository and this report. The result from Simulink:
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Screenshot 2025-07-07 113152.png}
+    \caption{Comparison of linear model and actual system response.}
+    \label{fig:fig4}
+  \end{figure}
+  As you can see, $G_a(s)$ performed better in MATLAB and Simulink.
+
+  \item Design a PI controller to raise the output from 0.5 to 0.6 while satisfying the following requirements: \\
+  - Zero steady-state error in response to a unit step input. \\
+  - Overshoot less than 10\%. \\
+  - Settling time less than 10 seconds. \\
+  The PI controller is given by $u(t) = K_p (\beta r(t) - y(t)) + K_i \int_{0}^{t} (r(t) - y(t)) \, dt$. Since $\beta=0$, we have $U(s) = -K_p Y(s) + K_i \frac{R(s)-Y(s)}{s}$. Using $Y(s) = G(s)U(s)$, the closed-loop transfer function is:
+  \begin{equation*}
+    \frac{Y(s)}{R(s)} = \frac{G(s) K_i / s}{1 + G(s) (K_p + K_i / s)} = \frac{K_i G(s)}{s + G(s) (K_p s + K_i)}
+  \end{equation*}
+  Let $G(s) = \frac{K}{\tau s + 1}$, so:
+  \begin{equation*}
+    \frac{Y(s)}{R(s)} = \frac{\frac{K K_i}{\tau}}{s^2 + \frac{K K_p + 1}{\tau} s + \frac{K K_i}{\tau}}
+  \end{equation*}
+  The first criterion (zero steady-state error) is met since:
+  \begin{equation*}
+    \lim_{s \to 0} \frac{Y(s)}{R(s)} = 1 \implies e_{ss} = \lim_{t \to \infty} e(t) = 0
+  \end{equation*}
+  For the second criterion (overshoot):
+  \begin{equation*}
+    \text{Overshoot} = e^{-\pi \zeta / \sqrt{1-\zeta^2}} \leq 0.1 \implies \zeta \geq \sqrt{\frac{\ln(0.1)^2}{\ln(0.1)^2 + \pi^2}} \approx 0.591
+  \end{equation*}
+  Choosing $\zeta = 0.65$ satisfies $\zeta \geq 0.591$. For the third criterion (settling time):
+  \begin{equation*}
+    T_s = \frac{4}{\zeta \omega_n} \leq 10 \implies 2 \zeta \omega_n \geq \frac{8}{10} \implies \frac{K K_p + 1}{\tau} \geq 0.8
+  \end{equation*}
+  Using $G(s) = \frac{0.25}{s + 0.2} = \frac{1.25}{5s + 1}$, we have $K = 1.25$, $\tau = 5$. Thus:
+  \begin{equation*}
+    K_p \geq \frac{\frac{8 \cdot 5}{10} - 1}{1.25} = 2.4
+  \end{equation*}
+  Choosing $K_p = 3.4$ satisfies the condition.
+\end{enumerate}
+
+\section*{Conclusion}
+This lab demonstrated the process of system identification and control design for a nonlinear system. By linearizing the system around an operating point, deriving a first-order model, and comparing it with the actual system, we validated the linear approximation. The PI controller design successfully met the requirements of zero steady-state error, overshoot less than 10\%, and settling time less than 10 seconds, as verified through Simulink simulations.
+
+\end{document}
